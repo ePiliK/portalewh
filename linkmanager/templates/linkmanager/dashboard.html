@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Dashboard</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Cliente</th>
+            <th>Link Sito</th>
+            <th>Link Articolo</th>
+            <th>Costo</th>
+            <th>ZA</th>
+            <th>ZE</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for link in links %}
+        <tr>
+            <td>{{ link.client.name }}</td>
+            <td><a href="{{ link.site_link }}">{{ link.site_link }}</a></td>
+            <td><a href="{{ link.article_link }}">{{ link.article_link }}</a></td>
+            <td>{{ link.cost }}</td>
+            <td>{{ link.za }}</td>
+            <td>{{ link.da }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

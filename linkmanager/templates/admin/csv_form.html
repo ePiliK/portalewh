@@ -1,0 +1,18 @@
+{% extends 'admin/base.html' %}
+
+{% block content %}
+    <div>
+        <form action="." method="POST" enctype="multipart/form-data">
+            {{ form.as_p }}
+            {% csrf_token %}
+            <button type="submit">Importa Clienti</button>
+        </form>
+    </div>
+    <br />
+    <div>
+        <p>
+            Carica un file CSV con le seguenti colonne:<br>
+            client, site_link, article_link, cost, za, da
+        </p>
+    </div>
+{% endblock %}
